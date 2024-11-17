@@ -1,7 +1,7 @@
-import { EnvironmentService } from '@task-manager/config/env/environment'
+import { EnvironmentService } from '@rental-distribution/config/env/environment'
 
-import { AppModule } from '@task-manager/modules/app.module'
-import FastifyServerApplication from '@task-manager/fastify-server'
+import FastifyServerApplication from '@rental-distribution/fastify-server'
+import { AppModule } from '@rental-distribution/modules/app.module'
 
 async function bootstrap() {
 	const server = new FastifyServerApplication(new EnvironmentService())

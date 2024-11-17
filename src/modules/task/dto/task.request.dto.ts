@@ -2,11 +2,11 @@ import { ApiProperty, IntersectionType, PartialType } from '@nestjs/swagger'
 import { Transform } from 'class-transformer'
 import { IsDateString, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator'
 
-import { MESSAGES } from '@task-manager/resources/i18n'
-import { BaseUpdateDTO } from '@task-manager/core/models'
-import { enumString, trimField } from '@task-manager/core/utils'
+import { BaseUpdateDTO } from '@rental-distribution/core/models'
+import { enumString, trimField } from '@rental-distribution/core/utils'
+import { MESSAGES } from '@rental-distribution/resources/i18n'
 
-import { IChangeTaskStatus, ICreateTask, IUpdateTask, TaskStatusEnum } from '@task-manager/interfaces/task.types'
+import { IChangeTaskStatus, ICreateTask, IUpdateTask, TaskStatusEnum } from '@rental-distribution/interfaces/task.types'
 
 export class CreateTaskDTO implements ICreateTask {
 	@IsNotEmpty(MESSAGES.NOT_EMPTY)

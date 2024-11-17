@@ -1,16 +1,16 @@
-import { ValidationPipe, Logger } from '@nestjs/common'
+import { Logger, ValidationPipe } from '@nestjs/common'
 import { Test, TestingModule } from '@nestjs/testing'
-import { I18nService, i18nValidationErrorFactory, I18nValidationExceptionFilter } from 'nestjs-i18n'
 import { useContainer } from 'class-validator'
+import { I18nService, i18nValidationErrorFactory, I18nValidationExceptionFilter } from 'nestjs-i18n'
 
-import { TranslationModule } from '@task-manager/resources/i18n'
-import { PaginationModule } from '@task-manager/core/pagination'
-import { DatabaseModule, DatabaseService } from '@task-manager/config/database'
-import { ValidatorRulesModule } from '@task-manager/core/validator-rules'
-import { EnvironmentService } from '@task-manager/config/env/environment'
-import { SwaggerConfig } from '@task-manager/config'
-import { QueryParserMiddleware } from '@task-manager/core/middlewares'
-import { AllExceptionsFilter } from '@task-manager/core/filters'
+import { SwaggerConfig } from '@rental-distribution/config'
+import { DatabaseModule, DatabaseService } from '@rental-distribution/config/database'
+import { EnvironmentService } from '@rental-distribution/config/env/environment'
+import { AllExceptionsFilter } from '@rental-distribution/core/filters'
+import { QueryParserMiddleware } from '@rental-distribution/core/middlewares'
+import { PaginationModule } from '@rental-distribution/core/pagination'
+import { ValidatorRulesModule } from '@rental-distribution/core/validator-rules'
+import { TranslationModule } from '@rental-distribution/resources/i18n'
 
 const logger = new Logger()
 logger.error = jest.fn()

@@ -1,7 +1,7 @@
 import { Prop, SchemaFactory } from '@nestjs/mongoose'
 import { Types } from 'mongoose'
 
-import { IOwner } from '@task-manager/interfaces/base.types'
+import { IOwner } from '@rental-distribution/interfaces/base.types'
 
 export class RawBaseSchema {
 	_id: Types.ObjectId

@@ -6,9 +6,9 @@ import { useContainer } from 'class-validator'
 import { I18nValidationExceptionFilter, i18nValidationErrorFactory } from 'nestjs-i18n'
 import { Logger } from 'nestjs-pino'
 
-import { CompressionConfig, CsrfProtectionConfig, HelmetConfig, SwaggerConfig } from '@task-manager/config'
-import { EnvironmentService } from '@task-manager/config/env/environment'
-import { AllExceptionsFilter } from '@task-manager/core/filters'
+import { CompressionConfig, CsrfProtectionConfig, HelmetConfig, SwaggerConfig } from '@rental-distribution/config'
+import { EnvironmentService } from '@rental-distribution/config/env/environment'
+import { AllExceptionsFilter } from '@rental-distribution/core/filters'
 
 export default class FastifyServerApplication {
 	public app: NestFastifyApplication
@@ -53,7 +53,7 @@ export default class FastifyServerApplication {
 		const server = await this.app.listen(PORT, '0.0.0.0')
 		server.setTimeout(MAX_TIMEOUT)
 		console.info(
-			`⚛️ [${NODE_ENV.toUpperCase()}] Task-Manager API is running on: ${await this.app.getUrl()}. Max API timeout is ${MAX_TIMEOUT}ms`
+			`⚛️ [${NODE_ENV.toUpperCase()}] rental-distribution API is running on: ${await this.app.getUrl()}. Max API timeout is ${MAX_TIMEOUT}ms`
 		)
 	}
 }

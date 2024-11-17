@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
 import { TerminusModule } from '@nestjs/terminus'
 
-import { HealthChecker } from '@task-manager/modules/health/service/health.service'
-import { HealthCheckController } from '@task-manager/modules/health/health.controller'
+import { HealthCheckController } from '@rental-distribution/modules/health/health.controller'
+import { HealthChecker } from '@rental-distribution/modules/health/service/health.service'
 
 @Module({
 	imports: [TerminusModule],

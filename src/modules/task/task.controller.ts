@@ -14,13 +14,18 @@ import {
 } from '@nestjs/common'
 import { ApiCreatedResponse, ApiNoContentResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger'
 
-import { FindQuery, GetPaginationDto } from '@task-manager/core/models'
-import { TASK_DOCS } from '@task-manager/resources/docs'
+import { FindQuery, GetPaginationDto } from '@rental-distribution/core/models'
+import { TASK_DOCS } from '@rental-distribution/resources/docs'
 
-import { ITask } from '@task-manager/interfaces/task.types'
-import { ChangeTaskStatusDTO, CreateTaskDTO, TaskResponseDTO, UpdateTaskDTO } from '@task-manager/modules/task/dto'
-import { TaskService } from '@task-manager/modules/task/service'
-import { VerifyTask } from '@task-manager/modules/task/interceptors'
+import { ITask } from '@rental-distribution/interfaces/task.types'
+import {
+	ChangeTaskStatusDTO,
+	CreateTaskDTO,
+	TaskResponseDTO,
+	UpdateTaskDTO,
+} from '@rental-distribution/modules/task/dto'
+import { VerifyTask } from '@rental-distribution/modules/task/interceptors'
+import { TaskService } from '@rental-distribution/modules/task/service'
 
 const docs = TASK_DOCS
 export class PaginatedTask extends GetPaginationDto(TaskResponseDTO) {}

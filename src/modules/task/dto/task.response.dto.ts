@@ -1,10 +1,9 @@
 import { ApiResponseProperty } from '@nestjs/swagger'
 
-import { BaseDTO, OwnerDTO } from '@task-manager/core/models'
-import { enumString } from '@task-manager/core/utils'
+import { BaseDTO } from '@rental-distribution/core/models'
+import { enumString } from '@rental-distribution/core/utils'
 
-import { IOwner } from '@task-manager/interfaces/base.types'
-import { ITask, ITaskStatus, TaskStatusEnum } from '@task-manager/interfaces/task.types'
+import { ITask, ITaskStatus, TaskStatusEnum } from '@rental-distribution/interfaces/task.types'
 
 export class TaskStatusDTO implements ITaskStatus {
 	@ApiResponseProperty({ type: () => String, example: enumString(TaskStatusEnum) })

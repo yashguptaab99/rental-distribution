@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common'
 import { PipelineStage, Types } from 'mongoose'
 
-import { BaseRepository } from '@task-manager/core/base'
-import { FindQuery } from '@task-manager/core/models'
+import { BaseRepository } from '@rental-distribution/core/base'
+import { FindQuery } from '@rental-distribution/core/models'
 
-import { IPaginatedResponse } from '@task-manager/interfaces/pagination.types'
-import { IFilter } from '@task-manager/interfaces/query.types'
+import { IPaginatedResponse } from '@rental-distribution/interfaces/pagination.types'
+import { IFilter } from '@rental-distribution/interfaces/query.types'
 
 export interface AggregationResult<T> {
 	data: T[]

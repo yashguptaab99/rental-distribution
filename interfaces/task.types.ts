@@ -1,4 +1,4 @@
-import { IBaseModel, IOwner } from '@task-manager/interfaces/base.types'
+import { IBaseModel } from '@rental-distribution/interfaces/base.types'
 
 export enum TaskStatusEnum {
 	TODO = 'todo',

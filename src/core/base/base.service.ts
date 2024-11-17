@@ -1,6 +1,6 @@
-import { FindQuery, PaginatedResponse } from '@task-manager/core/models'
+import { FindQuery, PaginatedResponse } from '@rental-distribution/core/models'
 
-import { IFilter } from '@task-manager/interfaces/query.types'
+import { IFilter } from '@rental-distribution/interfaces/query.types'
 
 interface IWrite<T> {
 	create(item: T, arg?: any): Promise<T>

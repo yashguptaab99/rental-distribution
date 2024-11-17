@@ -1,4 +1,4 @@
-import { ITask, TaskStatusEnum } from '@task-manager/interfaces/task.types'
+import { ITask, TaskStatusEnum } from '@rental-distribution/interfaces/task.types'
 
 export const mockCreateTask = () => ({
 	name: 'Task',

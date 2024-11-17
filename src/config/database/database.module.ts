@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose'
 
-import { env } from '@task-manager/config/env/environment'
+import { env } from '@rental-distribution/config/env/environment'
 
 import { DatabaseService } from './database.service'
 

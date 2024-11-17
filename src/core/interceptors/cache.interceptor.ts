@@ -1,8 +1,8 @@
 import { CacheInterceptor } from '@nestjs/cache-manager'
 import { ExecutionContext, Injectable } from '@nestjs/common'
 
-import { CachingService } from '@task-manager/core/cache'
-import { NO_CACHE_KEY } from '@task-manager/core/decorators'
+import { CachingService } from '@rental-distribution/core/cache'
+import { NO_CACHE_KEY } from '@rental-distribution/core/decorators'
 
 @Injectable()
 export class HttpCacheInterceptor extends CacheInterceptor {

@@ -1,10 +1,10 @@
 import { ApiResponseProperty } from '@nestjs/swagger'
-import { Types } from 'mongoose'
 import { Allow, Validate } from 'class-validator'
+import { Types } from 'mongoose'
 
-import { NoEmptyBodyRule } from '@task-manager/core/validator-rules'
+import { NoEmptyBodyRule } from '@rental-distribution/core/validator-rules'
 
-import { IBaseModel, IOwner } from '@task-manager/interfaces/base.types'
+import { IBaseModel, IOwner } from '@rental-distribution/interfaces/base.types'
 
 export class BaseDTO implements IBaseModel {
 	@ApiResponseProperty({ type: () => String, example: '507f191e810c19729de860ea' })

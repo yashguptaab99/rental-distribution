@@ -1,8 +1,8 @@
-import { I18nService } from 'nestjs-i18n'
-import { isMongoId, ValidationArguments, ValidatorConstraintInterface } from 'class-validator'
 import { Injectable } from '@nestjs/common'
+import { isMongoId, ValidationArguments, ValidatorConstraintInterface } from 'class-validator'
+import { I18nService } from 'nestjs-i18n'
 
-import { BaseRepository } from '@task-manager/core/base'
+import { BaseRepository } from '@rental-distribution/core/base'
 
 @Injectable()
 export class VerifyIdsRule<T> implements ValidatorConstraintInterface {

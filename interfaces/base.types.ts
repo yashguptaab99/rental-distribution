@@ -1,4 +1,4 @@
-import { ID } from '@task-manager/interfaces/id.types'
+import { ID } from '@rental-distribution/interfaces/id.types'
 
 export interface IBaseModel {
 	/**

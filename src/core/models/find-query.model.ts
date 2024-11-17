@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsOptional } from 'class-validator'
 
-import { IFilter, IFindQuery } from '@task-manager/interfaces/query.types'
+import { IFilter, IFindQuery } from '@rental-distribution/interfaces/query.types'
 
 import { PaginationQuery } from './pagination-query.model'
 

@@ -31,11 +31,11 @@ export const env = cleanEnv(process.env, {
 	 */
 	MONGO_DB_URI: url({
 		desc: 'Full URL to connect to database server.',
-		example: 'mongodb://localhost:27017/task-manager',
+		example: 'mongodb://localhost:27017/rental-distribution',
 	}),
 	MONGO_DB_URI_E2E_TEST: url({
 		desc: 'Full URL to connect to database server for e2e testing purpose.',
-		example: 'mongodb://localhost:27017/task-manager-test',
+		example: 'mongodb://localhost:27017/rental-distribution-test',
 	}),
 })
 

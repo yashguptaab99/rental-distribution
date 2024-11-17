@@ -1,4 +1,4 @@
-import { IDocs } from '@task-manager/resources/docs'
+import { IDocs } from '@rental-distribution/resources/docs'
 
 export const TASK_DOCS: IDocs = {
 	FETCHED: { detail: 'Find Task', response: 'Task fetched response' },

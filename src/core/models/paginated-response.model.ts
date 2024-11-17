@@ -5,7 +5,7 @@ import {
 	IPaginationMeta,
 	IPaginationMetaItem,
 	IPaginationMetaPage,
-} from '@task-manager/interfaces/pagination.types'
+} from '@rental-distribution/interfaces/pagination.types'
 
 class PaginationMetaItemDTO implements IPaginationMetaItem {
 	@ApiResponseProperty({ type: () => Number, example: 100 })

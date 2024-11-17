@@ -1,7 +1,7 @@
-import { isMongoId, ValidatorConstraintInterface } from 'class-validator'
 import { Injectable } from '@nestjs/common'
+import { isMongoId, ValidatorConstraintInterface } from 'class-validator'
 
-import { IPartialService } from '@task-manager/core/base'
+import { IPartialService } from '@rental-distribution/core/base'
 
 @Injectable()
 export class ResourceNotFoundRule<T> implements ValidatorConstraintInterface {

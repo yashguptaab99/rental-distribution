@@ -2,9 +2,9 @@ import { ApiProperty } from '@nestjs/swagger'
 import { Type } from 'class-transformer'
 import { IsNumber, IsOptional, Min } from 'class-validator'
 
-import { MESSAGES } from '@task-manager/resources/i18n'
+import { MESSAGES } from '@rental-distribution/resources/i18n'
 
-import { IPaginationQuery } from '@task-manager/interfaces/pagination.types'
+import { IPaginationQuery } from '@rental-distribution/interfaces/pagination.types'
 
 export class PaginationQuery implements IPaginationQuery {
 	@IsOptional()

@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
 import { INestApplication } from '@nestjs/common'
-import request from 'supertest'
 import { Connection, Types } from 'mongoose'
+import request from 'supertest'
 
-import { mockCreateTask, mockUpdateTask } from '@task-manager/mocks/task.mock'
+import { mockCreateTask, mockUpdateTask } from '@rental-distribution/mocks/task.mock'
 
-import { TaskModule } from '@task-manager/modules/task/task.module'
+import { TaskModule } from '@rental-distribution/modules/task/task.module'
 
 import { isSorted, setupFactory } from './utils'
 

@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing'
 
-import { ResourceNotFoundError } from '@task-manager/core/exceptions'
-import { mockCreateTask, mockTask, mockUpdateTask, tasks, findTask } from '@task-manager/mocks/task.mock'
-import { TranslationModule } from '@task-manager/resources/i18n'
+import { ResourceNotFoundError } from '@rental-distribution/core/exceptions'
+import { findTask, mockCreateTask, mockTask, mockUpdateTask, tasks } from '@rental-distribution/mocks/task.mock'
+import { TranslationModule } from '@rental-distribution/resources/i18n'
 
-import { TaskService } from '@task-manager/modules/task/service/task.service'
-import { TaskRepository } from '@task-manager/modules/task/data'
-import { TaskStatusEnum } from '@task-manager/interfaces/task.types'
+import { TaskStatusEnum } from '@rental-distribution/interfaces/task.types'
+import { TaskRepository } from '@rental-distribution/modules/task/data'
+import { TaskService } from '@rental-distribution/modules/task/service/task.service'
 
 describe('TaskService', () => {
 	let taskService: TaskService

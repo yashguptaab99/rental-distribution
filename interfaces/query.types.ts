@@ -1,4 +1,4 @@
-import { IPaginationQuery } from '@task-manager/interfaces/pagination.types'
+import { IPaginationQuery } from '@rental-distribution/interfaces/pagination.types'
 
 export type IFilter<T> = Partial<Record<keyof T, string>> | Record<string, any>
 

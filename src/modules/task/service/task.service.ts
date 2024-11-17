@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common'
 import { I18nService } from 'nestjs-i18n'
 
-import { IBaseService } from '@task-manager/core/base'
-import { FindQuery, PaginatedResponse } from '@task-manager/core/models'
-import { ResourceNotFoundError } from '@task-manager/core/exceptions'
+import { IBaseService } from '@rental-distribution/core/base'
+import { ResourceNotFoundError } from '@rental-distribution/core/exceptions'
+import { FindQuery, PaginatedResponse } from '@rental-distribution/core/models'
 
-import { Task, TaskRepository } from '@task-manager/modules/task/data'
-import { CreateTaskDTO, TaskResponseDTO, UpdateTaskDTO } from '@task-manager/modules/task/dto'
-import { TaskStatusEnum } from '@task-manager/interfaces/task.types'
+import { TaskStatusEnum } from '@rental-distribution/interfaces/task.types'
+import { Task, TaskRepository } from '@rental-distribution/modules/task/data'
+import { CreateTaskDTO, TaskResponseDTO, UpdateTaskDTO } from '@rental-distribution/modules/task/dto'
 
 @Injectable()
 export class TaskService implements IBaseService {

@@ -1,7 +1,7 @@
 import { CacheModule } from '@nestjs/cache-manager'
 import { Global, Module } from '@nestjs/common'
 
-import { CachingService } from '@task-manager/core/cache/caching.service'
+import { CachingService } from '@rental-distribution/core/cache/caching.service'
 
 @Global()
 @Module({

@@ -23,11 +23,16 @@
 				"newlinesBetween": "always",
 				"groups": [
 					["module", "/^@nestjs/"],
-					["/^@task-manager/config/", "/^@task-manager/mocks/", "/^@task-manager/resources/", "/^@task-manager/core/"],
-					["/^@task-manager/modules/", "/^@task-manager/"],
-					["parent", "sibling", "index"]
-				]
-			}
-		]
-	}
+					[
+						"/^@rental-distribution/config/",
+						"/^@rental-distribution/mocks/",
+						"/^@rental-distribution/resources/",
+						"/^@rental-distribution/core/",
+					],
+					["/^@rental-distribution/modules/", "/^@rental-distribution/"],
+					["parent", "sibling", "index"],
+				],
+			},
+		],
+	},
 }

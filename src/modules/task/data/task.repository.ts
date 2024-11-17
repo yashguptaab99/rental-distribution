@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
-import { BaseRepository } from '@task-manager/core/base'
-import { PaginationHelper } from '@task-manager/core/pagination'
+import { BaseRepository } from '@rental-distribution/core/base'
+import { PaginationHelper } from '@rental-distribution/core/pagination'
 
 import { Task } from './task.schema'
 

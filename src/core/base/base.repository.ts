@@ -1,10 +1,10 @@
 import { ClientSession, Model, Types, UpdateQuery, isValidObjectId as mongooseIsValidObjectId } from 'mongoose'
 
-import { FindQuery, UpsertResponse } from '@task-manager/core/models'
-import { PaginationHelper, QueryMapper } from '@task-manager/core/pagination'
+import { FindQuery, UpsertResponse } from '@rental-distribution/core/models'
+import { PaginationHelper, QueryMapper } from '@rental-distribution/core/pagination'
 
-import { IBaseModel } from '@task-manager/interfaces/base.types'
-import { IPaginatedResponse } from '@task-manager/interfaces/pagination.types'
+import { IBaseModel } from '@rental-distribution/interfaces/base.types'
+import { IPaginatedResponse } from '@rental-distribution/interfaces/pagination.types'
 
 type DocumentType<T> = Omit<T, keyof IBaseModel> | Record<string, any>
 export type IFilter<T> = Partial<Record<keyof T, string>> | Record<string, any>

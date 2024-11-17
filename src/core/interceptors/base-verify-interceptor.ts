@@ -3,9 +3,9 @@ import { FastifyRequest } from 'fastify'
 import { I18nService } from 'nestjs-i18n'
 import { Observable } from 'rxjs'
 
-import { IPartialService } from '@task-manager/core/base'
-import { validateIds } from '@task-manager/core/utils'
-import { HeaderResourceNotFoundError } from '@task-manager/core/exceptions'
+import { IPartialService } from '@rental-distribution/core/base'
+import { HeaderResourceNotFoundError } from '@rental-distribution/core/exceptions'
+import { validateIds } from '@rental-distribution/core/utils'
 
 export class BaseVerifyInterceptor<T> implements NestInterceptor {
 	constructor(

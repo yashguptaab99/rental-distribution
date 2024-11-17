@@ -23,9 +23,9 @@
 		"rootDir": ".",
 		"esModuleInterop": true,
 		"paths": {
-			"@task-manager/interfaces/*": ["interfaces/*"],
-			"@task-manager/mocks/*": ["mocks/*"],
-			"@task-manager/*": ["src/*"]
+			"@rental-distribution/interfaces/*": ["interfaces/*"],
+			"@rental-distribution/mocks/*": ["mocks/*"],
+			"@rental-distribution/*": ["src/*"]
 		}
 	}
 }

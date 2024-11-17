@@ -1,21 +1,22 @@
 import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
-import { LoggerModule } from 'nestjs-pino/LoggerModule'
 import { APP_INTERCEPTOR } from '@nestjs/core'
+import { LoggerModule } from 'nestjs-pino/LoggerModule'
 
-import { DatabaseModule } from '@task-manager/config/database'
-import { EnvironmentModule, ThrottlerConfigModule } from '@task-manager/config'
-import { pinoLoggerConfig } from '@task-manager/config/logging/pino.config'
-import { CustomLoggerModule } from '@task-manager/core/logger'
-import { HttpCacheInterceptor } from '@task-manager/core/interceptors/cache.interceptor'
-import { CachingModule } from '@task-manager/core/cache'
-import { TranslationModule } from '@task-manager/resources/i18n'
-import { QueryParserMiddleware } from '@task-manager/core/middlewares'
-import { PaginationModule } from '@task-manager/core/pagination'
-import { ValidatorRulesModule } from '@task-manager/core/validator-rules'
+import { EnvironmentModule, ThrottlerConfigModule } from '@rental-distribution/config'
+import { DatabaseModule } from '@rental-distribution/config/database'
+import { pinoLoggerConfig } from '@rental-distribution/config/logging/pino.config'
+import { CachingModule } from '@rental-distribution/core/cache'
+import { HttpCacheInterceptor } from '@rental-distribution/core/interceptors/cache.interceptor'
+import { KafkaModule } from '@rental-distribution/core/kafka/kafka.module'
+import { CustomLoggerModule } from '@rental-distribution/core/logger'
+import { QueryParserMiddleware } from '@rental-distribution/core/middlewares'
+import { PaginationModule } from '@rental-distribution/core/pagination'
+import { ValidatorRulesModule } from '@rental-distribution/core/validator-rules'
+import { TranslationModule } from '@rental-distribution/resources/i18n'
 
-import { HealthCheckModule } from '@task-manager/modules/health/health.module'
-import { TaskModule } from '@task-manager/modules/task/task.module'
+import { HealthCheckModule } from '@rental-distribution/modules/health/health.module'
+import { TaskModule } from '@rental-distribution/modules/task/task.module'
 
 const API_MODULES = [HealthCheckModule, TaskModule]
 
@@ -35,6 +36,7 @@ const APIs = ['tasks']
 		CachingModule,
 		ValidatorRulesModule,
 		CustomLoggerModule,
+		KafkaModule,
 		...API_MODULES,
 	],
 	controllers: [],

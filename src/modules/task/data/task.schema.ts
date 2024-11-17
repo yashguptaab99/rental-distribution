@@ -1,9 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { BaseSchema } from '@task-manager/core/base'
+import { BaseSchema } from '@rental-distribution/core/base'
 
-import { ITask, ITaskStatus } from '@task-manager/interfaces/task.types'
-import { TaskStatus, TaskStatusSchema } from '@task-manager/modules/task/data'
+import { ITask, ITaskStatus } from '@rental-distribution/interfaces/task.types'
+import { TaskStatus, TaskStatusSchema } from '@rental-distribution/modules/task/data'
 
 @Schema({ timestamps: true })
 export class Task extends BaseSchema implements ITask {

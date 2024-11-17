@@ -1,10 +1,18 @@
 {
-    "cSpell.words": [
-        "commitlint",
-        "envalid",
-        "fastify",
-        "nestjs",
-        "pino",
-        "preinstall"
-    ]
+	"editor.codeActionsOnSave": {
+		"source.eslint.fix": "explicit",
+		"source.organizeImports": "explicit"
+	},
+	"editor.formatOnSave": true,
+	"eslint.format.enable": true,
+	"explorer.compactFolders": false,
+	"editor.rulers": [120],
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.renderLineHighlight": "gutter",
+	"eslint.validate": ["javascript", "typescript"],
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.preferences.importModuleSpecifier": "non-relative",
+	"eslint.workingDirectories": ["./src"],
+	"cSpell.words": ["commitlint", "envalid", "fastify", "nestjs", "pino", "preinstall"]
 }
