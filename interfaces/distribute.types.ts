@@ -9,6 +9,7 @@ export interface ICreateDistribution {
 	startTime: string
 	endTime: string
 	frequency: FREQUENCY_ENUM
+	distributionAmount: number
 	executionDate?: string
 }
 

@@ -29,7 +29,7 @@ export class DistributeService implements OnModuleInit {
 			const { data } = job.attrs
 
 			this.kafkaClient.emit('task-topic', data)
-			this.logger.debug(
+			this.logger.warn(
 				`Emitted task (ID: ${data.taskId}) at ${new Date(data.timestamp).toLocaleString()} [UTC: ${new Date(data.timestamp).toISOString()}]`
 			)
 
@@ -39,7 +39,7 @@ export class DistributeService implements OnModuleInit {
 	}
 
 	async createTasks(data: ICreateDistribution): Promise<ICreateDistributionResponse> {
-		const { startTime, endTime, frequency, executionDate } = data
+		const { startTime, endTime, frequency, distributionAmount, executionDate } = data
 
 		// Validate times
 		const start = new Date(startTime)
@@ -64,6 +64,7 @@ export class DistributeService implements OnModuleInit {
 					startTime,
 					endTime,
 					frequency,
+					distributionAmount,
 					executionDate,
 				},
 			}
@@ -71,8 +72,7 @@ export class DistributeService implements OnModuleInit {
 			const task = await this.taskService.create({ ...payload, isEmitted: false })
 
 			await this.agenda.schedule(new Date(timestamp), 'Distribution Task', {
-				timestamp,
-				details: payload,
+				...payload,
 				taskId: task._id,
 			})
 
