@@ -2,6 +2,8 @@
 import { DynamicModule, Logger as NestLogger, ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
+import { Agenda } from 'agenda'
+import * as Agendash from 'agendash'
 import { useContainer } from 'class-validator'
 import { i18nValidationErrorFactory, I18nValidationExceptionFilter } from 'nestjs-i18n'
 
@@ -45,6 +47,15 @@ export default class FastifyServerApplication {
 			new AllExceptionsFilter(new NestLogger(AllExceptionsFilter.name)),
 			new I18nValidationExceptionFilter({ detailedErrors: false })
 		)
+
+		const agenda = this.app.get<Agenda>('AGENDA_INSTANCE')
+		this.app.use('/dash', Agendash.default(agenda))
+
+		this.app.enableShutdownHooks()
+		process.on('SIGTERM', async () => {
+			await agenda.stop()
+			process.exit(0)
+		})
 	}
 
 	public async run(appModule: unknown): Promise<void> {

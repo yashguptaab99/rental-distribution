@@ -40,6 +40,7 @@
 		"@nestjs/terminus": "^10.2.3",
 		"@nestjs/throttler": "^5.2.0",
 		"agenda": "^5.0.0",
+		"agendash": "^4.0.0",
 		"class-transformer": "^0.5.1",
 		"class-validator": "^0.14.1",
 		"dotenv": "^16.4.5",

@@ -56,6 +56,9 @@ dependencies:
   agenda:
     specifier: ^5.0.0
     version: 5.0.0(@aws-sdk/client-sso-oidc@3.693.0)
+  agendash:
+    specifier: ^4.0.0
+    version: 4.0.0(@aws-sdk/client-sso-oidc@3.693.0)
   class-transformer:
     specifier: ^0.5.1
     version: 0.5.1
@@ -3154,6 +3157,22 @@ packages:
     hasBin: true
     dev: true
 
+  /agenda@4.4.0(@aws-sdk/client-sso-oidc@3.693.0):
+    resolution: {integrity: sha512-7fIO4indmmrtkDmj2woOBJnhHIM7jPtkdGR4VOApB46eeBrPGUnO28RFrmjHebc3PMDnKJI0PWFyu9L9VotgJg==}
+    engines: {node: '>=12.9.0'}
+    dependencies:
+      cron-parser: 3.5.0
+      date.js: 0.3.3
+      debug: 4.3.7
+      human-interval: 2.0.1
+      moment-timezone: 0.5.46
+      mongodb: 4.17.2(@aws-sdk/client-sso-oidc@3.693.0)
+    transitivePeerDependencies:
+      - '@aws-sdk/client-sso-oidc'
+      - aws-crt
+      - supports-color
+    dev: false
+
   /agenda@5.0.0(@aws-sdk/client-sso-oidc@3.693.0):
     resolution: {integrity: sha512-jOoa7PvARpst/y2PI8h0wph4NmcjYJ/4wzFhQcHUbNgN+Hte/9h/MzKE0ZmHfIwdsSlnv3rhbBQ3Zd/gwFkThg==}
     engines: {node: '>=12.9.0'}
@@ -3167,6 +3186,28 @@ packages:
     transitivePeerDependencies:
       - '@aws-sdk/client-sso-oidc'
       - aws-crt
+      - supports-color
+    dev: false
+
+  /agendash@4.0.0(@aws-sdk/client-sso-oidc@3.693.0):
+    resolution: {integrity: sha512-yAHyXwigBqd/6VTyzp1SHdZDqvI57+KpqY0DHcJoTiKszCyrsybJA4bMce6SOef1icIiJU9YSKiucRn0VEt2iQ==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      agenda: 4.4.0(@aws-sdk/client-sso-oidc@3.693.0)
+      body-parser: 1.20.3
+      commander: 2.20.3
+      express: 4.21.1
+      mongodb: 5.9.2
+      semver: 7.6.3
+    transitivePeerDependencies:
+      - '@aws-sdk/client-sso-oidc'
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - aws-crt
+      - kerberos
+      - mongodb-client-encryption
+      - snappy
       - supports-color
     dev: false
 
@@ -3808,7 +3849,6 @@ packages:
 
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
-    dev: true
 
   /commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}

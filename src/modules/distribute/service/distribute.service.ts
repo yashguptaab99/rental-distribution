@@ -1,5 +1,6 @@
 import { BadRequestException, Inject, Injectable, Logger, OnModuleInit } from '@nestjs/common'
 import { ClientKafka } from '@nestjs/microservices'
+import Agenda from 'agenda'
 
 import {
 	FREQUENCY_ENUM,
@@ -14,11 +15,25 @@ export class DistributeService implements OnModuleInit {
 
 	constructor(
 		@Inject('KAFKA_SERVICE') private readonly kafkaClient: ClientKafka,
+		@Inject('AGENDA_INSTANCE') private readonly agenda: Agenda,
 		private readonly taskService: TaskService
 	) {}
 
 	async onModuleInit() {
 		await this.kafkaClient.connect()
+		this.defineAgendaJob()
+	}
+
+	defineAgendaJob() {
+		this.agenda.define('Distribution Task', async (job) => {
+			const { data } = job.attrs
+
+			this.kafkaClient.emit('task-topic', data)
+			this.logger.debug(`Emitted task at ${new Date(data.timestamp).toISOString()}`)
+
+			// Update task status in the database (optional)
+			await this.taskService.update(data.taskId, { isEmitted: true })
+		})
 	}
 
 	async createTasks(data: ICreateDistribution): Promise<ICreateDistributionResponse> {
@@ -50,9 +65,14 @@ export class DistributeService implements OnModuleInit {
 				},
 			}
 
-			await this.taskService.create({ ...payload, isEmitted: false })
+			const task = await this.taskService.create({ ...payload, isEmitted: false })
 
-			this.kafkaClient.emit('task-topic', payload)
+			await this.agenda.schedule(new Date(timestamp), 'Distribution Task', {
+				timestamp,
+				details: payload,
+				taskId: task._id,
+			})
+
 			this.logger.debug(`Scheduled task at ${new Date(timestamp).toISOString()}`)
 		}
 
