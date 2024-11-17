@@ -1,5 +1,5 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common'
-import { ApiCreatedResponse, ApiOperation } from '@nestjs/swagger'
+import { ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { DISTRIBUTE_DOCS } from '@rental-distribution/resources/docs'
 
@@ -8,6 +8,7 @@ import { DistributeService } from '@rental-distribution/modules/distribute/servi
 
 const docs = DISTRIBUTE_DOCS
 
+@ApiTags('Distribute API')
 @Controller('distribute')
 export class DistributeController {
 	constructor(private readonly distributeService: DistributeService) {}
