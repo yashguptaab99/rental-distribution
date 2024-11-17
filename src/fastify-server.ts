@@ -4,7 +4,6 @@ import { NestFactory } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
 import { useContainer } from 'class-validator'
 import { I18nValidationExceptionFilter, i18nValidationErrorFactory } from 'nestjs-i18n'
-import { Logger } from 'nestjs-pino'
 
 import { CompressionConfig, CsrfProtectionConfig, HelmetConfig, SwaggerConfig } from '@rental-distribution/config'
 import { EnvironmentService } from '@rental-distribution/config/env/environment'
@@ -17,7 +16,6 @@ export default class FastifyServerApplication {
 
 	protected async configureServices(appModule) {
 		this.app.enableCors()
-		this.app.useLogger(this.app.get(Logger))
 		this.app.useGlobalPipes(
 			new ValidationPipe({
 				whitelist: true,

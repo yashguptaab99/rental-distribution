@@ -14,5 +14,15 @@
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"eslint.workingDirectories": ["./src"],
-	"cSpell.words": ["commitlint", "envalid", "fastify", "nestjs", "pino", "preinstall"]
+	"cSpell.words": [
+		"commitlint",
+		"envalid",
+		"fastify",
+		"kafkajs",
+		"nestjs",
+		"Partitioner",
+		"Partitioners",
+		"pino",
+		"preinstall"
+	]
 }

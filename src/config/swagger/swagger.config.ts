@@ -8,7 +8,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
  */
 export class SwaggerConfig {
 	static useSwagger(app: INestApplication) {
-		const config = new DocumentBuilder().setTitle('TaskManager-API').setVersion('0.0.1').addBearerAuth().build()
+		const config = new DocumentBuilder().setTitle('Rental-Distribution-API').setVersion('0.0.1').addBearerAuth().build()
 		const document = SwaggerModule.createDocument(app, config)
 
 		SwaggerModule.setup('docs', app, document)

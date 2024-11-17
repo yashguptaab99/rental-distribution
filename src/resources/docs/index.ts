@@ -1,2 +1,2 @@
+export * from './distribute.docs'
 export * from './types'
-export * from './task.docs'

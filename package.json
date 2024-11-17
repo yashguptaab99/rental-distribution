@@ -44,6 +44,7 @@
 		"dotenv": "^16.4.5",
 		"envalid": "^8.0.0",
 		"fastify": "^4.28.1",
+		"kafkajs": "^2.2.4",
 		"lodash": "^4.17.21",
 		"nestjs-i18n": "^10.5.0",
 		"nestjs-pino": "^4.1.0",
