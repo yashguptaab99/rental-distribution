@@ -8,7 +8,7 @@ import { DistributeService } from '@rental-distribution/modules/distribute/servi
 
 @Module({
 	imports: [KafkaModule],
-	controllers: [DistributeController],
-	providers: [DistributeService, DistributeListener],
+	controllers: [DistributeController, DistributeListener],
+	providers: [DistributeService],
 })
 export class DistributeModule {}

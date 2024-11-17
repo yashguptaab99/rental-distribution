@@ -8,6 +8,7 @@ import { I18nValidationExceptionFilter, i18nValidationErrorFactory } from 'nestj
 import { CompressionConfig, CsrfProtectionConfig, HelmetConfig, SwaggerConfig } from '@rental-distribution/config'
 import { EnvironmentService } from '@rental-distribution/config/env/environment'
 import { AllExceptionsFilter } from '@rental-distribution/core/filters'
+import { kafkaConfig } from '@rental-distribution/core/kafka/kafka.config'
 
 export default class FastifyServerApplication {
 	public app: NestFastifyApplication
@@ -29,6 +30,9 @@ export default class FastifyServerApplication {
 		await CompressionConfig.useCompression(this.app, 'brotli')
 		SwaggerConfig.useSwagger(this.app)
 		useContainer(this.app.select(appModule as DynamicModule), { fallbackOnErrors: true })
+
+		this.app.connectMicroservice(kafkaConfig)
+		await this.app.startAllMicroservices()
 	}
 
 	protected configureAdapters() {

@@ -42,7 +42,7 @@ export class DistributeService implements OnModuleInit {
 				},
 			}
 			this.kafkaClient.emit('task-topic', payload)
-			this.logger.log(`Scheduled task at ${new Date(timestamp).toISOString()}`)
+			this.logger.debug(`Scheduled task at ${new Date(timestamp).toISOString()}`)
 		}
 
 		return { message: 'Tasks scheduled successfully', taskTimestamps }
