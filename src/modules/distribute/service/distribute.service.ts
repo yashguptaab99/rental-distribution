@@ -29,7 +29,9 @@ export class DistributeService implements OnModuleInit {
 			const { data } = job.attrs
 
 			this.kafkaClient.emit('task-topic', data)
-			this.logger.debug(`Emitted task at ${new Date(data.timestamp).toISOString()}`)
+			this.logger.debug(
+				`Emitted task (ID: ${data.taskId}) at ${new Date(data.timestamp).toLocaleString()} [UTC: ${new Date(data.timestamp).toISOString()}]`
+			)
 
 			// Update task status in the database (optional)
 			await this.taskService.update(data.taskId, { isEmitted: true })
@@ -47,8 +49,9 @@ export class DistributeService implements OnModuleInit {
 
 		// Calculate task execution timestamps
 		const taskTimestamps = this.calculateTaskTimestamps(
-			start,
-			end,
+			// TEST PURPOSES ONLY start, end
+			new Date(),
+			new Date(new Date().getTime() + 100000),
 			frequency,
 			executionDate ? new Date(executionDate) : undefined
 		)
@@ -73,7 +76,9 @@ export class DistributeService implements OnModuleInit {
 				taskId: task._id,
 			})
 
-			this.logger.debug(`Scheduled task at ${new Date(timestamp).toISOString()}`)
+			this.logger.debug(
+				`Scheduled task (ID: ${task._id}) to run at ${new Date(timestamp).toLocaleString()} [UTC: ${new Date(timestamp).toISOString()}]`
+			)
 		}
 
 		return { message: 'Tasks scheduled successfully', taskTimestamps }
@@ -103,6 +108,9 @@ export class DistributeService implements OnModuleInit {
 					break
 				case FREQUENCY_ENUM.MONTHLY:
 					current.setMonth(current.getMonth() + 1)
+					break
+				case FREQUENCY_ENUM.TEN_SECONDS:
+					current.setTime(current.getTime() + 10000)
 					break
 				default:
 					throw new BadRequestException('Invalid frequency')

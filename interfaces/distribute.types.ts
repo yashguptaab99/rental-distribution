@@ -2,6 +2,7 @@ export enum FREQUENCY_ENUM {
 	DAILY = 'daily',
 	WEEKLY = 'weekly',
 	MONTHLY = 'monthly',
+	TEN_SECONDS = 'ten_seconds',
 }
 
 export interface ICreateDistribution {

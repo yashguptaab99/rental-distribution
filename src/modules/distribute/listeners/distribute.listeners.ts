@@ -9,7 +9,9 @@ export class DistributeListener {
 	handleTask(@Payload() message: any) {
 		const payload = message.value ? JSON.parse(message.value.toString()) : message
 
-		this.logger.log(`Received task: ${JSON.stringify(payload)}`)
+		this.logger.debug(
+			`Received task (ID: ${payload.taskId}): Distribution Task done at ${new Date(payload.timestamp).toLocaleString()} [UTC: ${new Date(payload.timestamp).toISOString()}]`
+		)
 
 		// Implement your task execution logic here
 	}
