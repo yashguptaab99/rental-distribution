@@ -17,7 +17,7 @@ export class DistributeListener {
 		const payload: IMessage = message.value ? JSON.parse(message.value.toString()) : message
 
 		this.logger.debug(
-			`Received task (ID: ${payload.taskId}): ${payload.details.distributionAmount} Successfully distributed at ${new Date(payload.timestamp).toLocaleString()} [UTC: ${new Date(payload.timestamp).toISOString()}]`
+			`Received task (ID: ${payload.taskId}): Rental Yield of ${payload.details.distributionAmount} tokens successfully distributed at ${new Date(payload.timestamp).toLocaleString()} [UTC: ${new Date(payload.timestamp).toISOString()}]`
 		)
 
 		// Implement your task execution logic here
