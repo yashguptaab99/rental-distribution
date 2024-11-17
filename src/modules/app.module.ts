@@ -2,11 +2,10 @@ import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/c
 import { ConfigModule } from '@nestjs/config'
 import { APP_INTERCEPTOR } from '@nestjs/core'
 
-import { EnvironmentModule, ThrottlerConfigModule } from '@rental-distribution/config'
+import { AgendaModule, EnvironmentModule, KafkaModule, ThrottlerConfigModule } from '@rental-distribution/config'
 import { DatabaseModule } from '@rental-distribution/config/database'
 import { CachingModule } from '@rental-distribution/core/cache'
 import { HttpCacheInterceptor } from '@rental-distribution/core/interceptors/cache.interceptor'
-import { KafkaModule } from '@rental-distribution/core/kafka/kafka.module'
 import { CustomLoggerModule } from '@rental-distribution/core/logger'
 import { QueryParserMiddleware } from '@rental-distribution/core/middlewares'
 import { PaginationModule } from '@rental-distribution/core/pagination'
@@ -34,6 +33,7 @@ const APIs = ['tasks', 'distribute']
 		ValidatorRulesModule,
 		CustomLoggerModule,
 		KafkaModule,
+		AgendaModule,
 		...API_MODULES,
 	],
 	controllers: [],

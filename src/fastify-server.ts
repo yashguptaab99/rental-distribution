@@ -3,12 +3,17 @@ import { DynamicModule, Logger as NestLogger, ValidationPipe } from '@nestjs/com
 import { NestFactory } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
 import { useContainer } from 'class-validator'
-import { I18nValidationExceptionFilter, i18nValidationErrorFactory } from 'nestjs-i18n'
+import { i18nValidationErrorFactory, I18nValidationExceptionFilter } from 'nestjs-i18n'
 
-import { CompressionConfig, CsrfProtectionConfig, HelmetConfig, SwaggerConfig } from '@rental-distribution/config'
+import {
+	CompressionConfig,
+	CsrfProtectionConfig,
+	HelmetConfig,
+	kafkaConfig,
+	SwaggerConfig,
+} from '@rental-distribution/config'
 import { EnvironmentService } from '@rental-distribution/config/env/environment'
 import { AllExceptionsFilter } from '@rental-distribution/core/filters'
-import { kafkaConfig } from '@rental-distribution/core/kafka/kafka.config'
 
 export default class FastifyServerApplication {
 	public app: NestFastifyApplication

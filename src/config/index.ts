@@ -11,3 +11,7 @@ export { CompressionConfig } from './compression/compression.config'
 export { CsrfProtectionConfig } from './security/csrf-protection.config'
 export { HelmetConfig } from './security/helmet.config'
 export { SwaggerConfig } from './swagger/swagger.config'
+
+export { KafkaModule, kafkaConfig } from './kafka'
+
+export { AgendaModule } from './agenda/agenda.module'

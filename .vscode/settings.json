@@ -15,6 +15,7 @@
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"eslint.workingDirectories": ["./src"],
 	"cSpell.words": [
+		"brotli",
 		"commitlint",
 		"envalid",
 		"fastify",

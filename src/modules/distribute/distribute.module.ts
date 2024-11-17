@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 
-import { KafkaModule } from '@rental-distribution/core/kafka/kafka.module'
+import { KafkaModule } from '@rental-distribution/config'
 
 import { DistributeController } from '@rental-distribution/modules/distribute/distribute.controller'
 import { DistributeListener } from '@rental-distribution/modules/distribute/listeners'
