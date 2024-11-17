@@ -1,0 +1,16 @@
+{
+	"METHOD_NOT_IMPLEMENTED": "Method not implemented",
+	"RESOURCE": {
+		"NOT_FOUND": "{resource} not found",
+		"ALREADY_EXISTS": "{resource} already exists",
+		"ALREADY_USED": "{resource} already used"
+	},
+	"AUTH": {
+		"ACCESS_DENIED": "Access Denied",
+		"INVALID_CREDENTIALS": "Invalid credentials",
+		"TOKEN_EXPIRED": "Invalid {resource}. {resource} has expired",
+		"PASSWORD_MATCH": "Old password does not match",
+		"INVALID_TOKEN": "Invalid token signature",
+		"EMAIL_ALREADY_VERIFIED": "Email already verified"
+	}
+}
