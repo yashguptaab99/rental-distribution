@@ -4,14 +4,14 @@ export enum FREQUENCY_ENUM {
 	MONTHLY = 'monthly',
 }
 
-export interface ICreateTask {
+export interface ICreateDistribution {
 	startTime: string
 	endTime: string
 	frequency: FREQUENCY_ENUM
 	executionDate?: string
 }
 
-export interface ICreateTaskResponse {
+export interface ICreateDistributionResponse {
 	message: string
 	taskTimestamps: number[]
 }

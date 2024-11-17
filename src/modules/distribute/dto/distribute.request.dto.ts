@@ -1,9 +1,9 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 import { IsDateString, IsEnum, IsNotEmpty, IsOptional, ValidateIf } from 'class-validator'
 
-import { FREQUENCY_ENUM, ICreateTask } from '@rental-distribution/interfaces/distribute.types'
+import { FREQUENCY_ENUM, ICreateDistribution } from '@rental-distribution/interfaces/distribute.types'
 
-export class CreateTaskDto implements ICreateTask {
+export class CreateDistributionDto implements ICreateDistribution {
 	@ApiProperty({
 		description: 'The start time of the task schedule in ISO 8601 format.',
 		example: '2023-01-01T00:00:00Z',

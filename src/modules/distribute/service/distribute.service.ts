@@ -1,19 +1,27 @@
 import { BadRequestException, Inject, Injectable, Logger, OnModuleInit } from '@nestjs/common'
 import { ClientKafka } from '@nestjs/microservices'
 
-import { FREQUENCY_ENUM, ICreateTask, ICreateTaskResponse } from '@rental-distribution/interfaces/distribute.types'
+import {
+	FREQUENCY_ENUM,
+	ICreateDistribution,
+	ICreateDistributionResponse,
+} from '@rental-distribution/interfaces/distribute.types'
+import { TaskService } from '@rental-distribution/modules/task/service'
 
 @Injectable()
 export class DistributeService implements OnModuleInit {
 	private readonly logger = new Logger(DistributeService.name)
 
-	constructor(@Inject('KAFKA_SERVICE') private readonly kafkaClient: ClientKafka) {}
+	constructor(
+		@Inject('KAFKA_SERVICE') private readonly kafkaClient: ClientKafka,
+		private readonly taskService: TaskService
+	) {}
 
 	async onModuleInit() {
 		await this.kafkaClient.connect()
 	}
 
-	async createTasks(data: ICreateTask): Promise<ICreateTaskResponse> {
+	async createTasks(data: ICreateDistribution): Promise<ICreateDistributionResponse> {
 		const { startTime, endTime, frequency, executionDate } = data
 
 		// Validate times
@@ -41,6 +49,9 @@ export class DistributeService implements OnModuleInit {
 					executionDate,
 				},
 			}
+
+			await this.taskService.create({ ...payload, isEmitted: false })
+
 			this.kafkaClient.emit('task-topic', payload)
 			this.logger.debug(`Scheduled task at ${new Date(timestamp).toISOString()}`)
 		}

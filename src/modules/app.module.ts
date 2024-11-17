@@ -15,10 +15,11 @@ import { TranslationModule } from '@rental-distribution/resources/i18n'
 
 import { DistributeModule } from '@rental-distribution/modules/distribute/distribute.module'
 import { HealthCheckModule } from '@rental-distribution/modules/health/health.module'
+import { TaskModule } from '@rental-distribution/modules/task/task.module'
 
-const API_MODULES = [HealthCheckModule, DistributeModule]
+const API_MODULES = [HealthCheckModule, DistributeModule, TaskModule]
 
-const APIs = []
+const APIs = ['tasks', 'distribute']
 @Module({
 	imports: [
 		ConfigModule.forRoot({
